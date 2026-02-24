@@ -226,6 +226,7 @@ app.get("/generate-exam-report", async (req, res) => {
     const html = hb(ctx);
 
     const browser = await puppeteer.launch({
+    headless : "new",
       args: ["--no-sandbox", "--disable-setuid-sandbox"]
     });
     const page = await browser.newPage();
